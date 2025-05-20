@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+// Перечисление способов оплаты.
+enum PaymentMethodProtoEnum
+{
+	// Неизвестный метод оплаты.
+	PaymentMethodUndefined = 0;
+
+	// Наличные.
+	Cash = 1;
+
+	// Карта.
+	Card = 2;
+}
+
+// Перечисление валют.
+enum PaymentCurrentProtoEnum
+{
+	// Неизвестная валюта.
+	PaymentCurrentUndefined = 0;
+
+	// Руб.
+	Rub = 1;
+
+	// Дол.
+	Usd = 2;
+}
+
+// Сообщение входной модели платежа.
+message PaymentRequest
+{
+	// Id бронирования.
+	int32 bookingId = 1;
+
+	// Метод оплаты.
+	PaymentMethodProtoEnum paymentMethodEnum = 2;
+
+	// Валюта.
+	PaymentCurrentProtoEnum paymentCurrentEnum = 3;
+}
+
+// Сообщение выходной модели платежа.
+message PaymentResponse
+{
+	// Id платежа.
+	int64 paymentId = 1;
+
+	// Статус оплаты.
+	bool isSuccess = 2;
+
+	// Id транзакции оплаты.
+	google.protobuf.StringValue transactionId = 3;
+}
+
+// Сообщение входной модели удаления платежа.
+message PaymentDeleteRequest
+{
+	// Id транзакции.
+	string transactionId = 2;
+}
+
+// Сервис платежей.
+service PaymentProtoService
+{
+	// Метод обработки платежа.
+	rpc ProccessPayment (PaymentRequest) returns (PaymentResponse);
+
+	// Метод удаляет платеж.
+	rpc DeletePayment (PaymentDeleteRequest) returns (PaymentDeleteResponse);
+}

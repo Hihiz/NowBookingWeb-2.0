@@ -1,0 +1,53 @@
+<h1>Список бронирований</h1>
+
+<a class="btn btn-success me-2" (click)="onCreateBooking()"
+  >Добавить бронирование</a
+>
+<a class="btn btn-success" (click)="onGetCategories()">К списку категорий</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>startDate</th>
+      <th>endDate</th>
+      <th>userId</th>
+      <th>userFirstName</th>
+      <th>userLastName</th>
+      <th>userEmail</th>
+      <th>categoryId</th>
+      <th>categoryName</th>
+      <th>statusEnum</th>
+      <th>statusName</th>
+      <th>createdAt</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of bookings$.value">
+      <td class="link" (click)="onGetBookingById(booking.id)">
+        {{ booking.id }}
+      </td>
+      <td>{{ formatDate(booking.startDate) }}</td>
+      <td>{{ formatDate(booking.endDate) ?? "null" }}</td>
+      <td>{{ booking.userId }}</td>
+      <td>{{ booking.userFirstName }}</td>
+      <td>{{ booking.userLastName }}</td>
+      <td>{{ booking.userEmail }}</td>
+      <td>{{ booking.categoryId }}</td>
+      <td>{{ booking.categoryName }}</td>
+      <td>{{ booking.statusEnum }}</td>
+      <td>{{ booking.statusName }}</td>
+      <td>{{ formatDate(booking.createdAt) }}</td>
+
+      <!-- <td class="link" (click)="onChangeBookingStatus(booking.id)">
+        Изменить статус -->
+      <!-- </td> -->
+      <td class="link" (click)="onRefundPaymentBookingAsync(booking.id)">
+        Оставить заявку на возврат средств
+      </td>
+      <td class="link" (click)="onUpdateBooking(booking.id)">Редактировать</td>
+      <td class="link" (click)="onRemoveBookingAsync(booking.id)">Удалить</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+name: Сборка приложения
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build-application:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore dependencies
+        run: |     
+            dotnet restore ./NowBookingWeb.Booking/NowBookingWeb.Booking.Domain/NowBookingWeb.Booking.Domain.csproj
+  
+      - name: Build the project
+        run: | 
+            dotnet build ./NowBookingWeb.Booking/NowBookingWeb.Booking.Domain/NowBookingWeb.Booking.Domain.csproj --no-restore --configuration Release

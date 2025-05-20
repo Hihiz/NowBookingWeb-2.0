@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+// Перечисление статусов бронирования.
+enum BookingStatusEnumProto {
+    Undefined = 0; // Первое значение должно быть 0.
+
+	// Статус ожидания подтверждения.
+    Pending = 1;
+
+	// Статус подтвержденного бронирования.
+    Confirmed = 2;
+}
+
+// Сообщение бронирования.
+message Booking
+{
+	int32 id = 1;
+	google.protobuf.Timestamp startDate = 2;
+	google.protobuf.Timestamp endDate = 3;
+	int64 userId = 4;
+	string userFirstName = 5;
+	string categoryName = 9;
+	BookingStatusEnumProto statusEnum = 10;
+	string statusName = 11;
+	google.protobuf.Timestamp createdAt = 12;
+}
+
+// Сообщение входной модели изменения статуса бронирования.
+message ChangeBookingStatusRequest
+{
+	int32 bookingId = 1;
+	BookingStatusEnumProto statusEnum = 2;
+}
+
+// Сообщение выходной модели изменения статуса бронирования.
+message ChangeBookingStatusResponse
+{
+	Booking booking = 1;
+}
+
+// TODO: Добавить метод для обновления пользователя.
+// Сервис бронирования.
+service BookingProtoService
+{
+	// Метод обновляет статус бронирования.
+	rpc ChangeBookingStatus(ChangeBookingStatusRequest) returns (ChangeBookingStatusResponse);
+}
