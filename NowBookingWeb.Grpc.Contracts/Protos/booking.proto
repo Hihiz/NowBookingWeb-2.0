@@ -2,8 +2,6 @@ syntax = "proto3";
 
 // Перечисление статусов бронирования.
 enum BookingStatusEnumProto {
-    Undefined = 0; // Первое значение должно быть 0.
-
 	// Статус ожидания подтверждения.
     Pending = 1;
 
@@ -19,10 +17,7 @@ message Booking
 	google.protobuf.Timestamp endDate = 3;
 	int64 userId = 4;
 	string userFirstName = 5;
-	string categoryName = 9;
-	BookingStatusEnumProto statusEnum = 10;
-	string statusName = 11;
-	google.protobuf.Timestamp createdAt = 12;
+	string userLastName = 6;
 }
 
 // Сообщение входной модели изменения статуса бронирования.
@@ -38,10 +33,32 @@ message ChangeBookingStatusResponse
 	Booking booking = 1;
 }
 
-// TODO: Добавить метод для обновления пользователя.
+// Сообщение входной модели получения статуса бронирования по Id.
+message BookingStatusByBookingIdRequest
+{
+		int32 bookingId = 1;
+}
+
+// Сообщение входной модели создания бронирования. 
+message CreateBookingRequest
+{
+	google.protobuf.Timestamp startDate = 1;
+	google.protobuf.Timestamp endDate = 2;
+}
+
+
 // Сервис бронирования.
 service BookingProtoService
 {
+	// Метод получает список бронирований.
+	rpc GetBookings(google.protobuf.Empty) returns (BookingsResponse);
+
 	// Метод обновляет статус бронирования.
 	rpc ChangeBookingStatus(ChangeBookingStatusRequest) returns (ChangeBookingStatusResponse);
+
+	// Метод оставляет заявку на возврат средств.
+	rpc RefundPaymentBooking(RefundPaymentBookingRequest) returns(google.protobuf.Empty);
+
+	// Метод удаляет бронирования, связанные с категориями.
+	rpc RemoveBookingReletedCategories(RemoveBookingCategoryRequest) returns (google.protobuf.Empty);
 }
