@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+// Сообщение пользователей.
+message User
+{
+	// Id пользователя.
+	int64 userId = 1;
+
+	// Имя пользователя.
+	string firstName = 2;
+
+	// Фамилия пользователя.
+	string lastName = 3;
+
+	// Почта пользователя.
+	string email = 4;
+}
+
+// Сообщение выходной модели пользователей.
+message UserBookingResponse
+{
+	// Пользователь.
+	repeated User users = 1;
+}
+
+// Сервис пользователей.
+service UserProtoService
+{
+	// Метод получает списк пользователей для бронирования.
+	rpc GetUsersBookings (google.protobuf.Empty) returns (UserBookingResponse);
+}
