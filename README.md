@@ -2,25 +2,38 @@
 
 ## Стек
 * ASP.NET Core 9.0 - Web Api
-  *   NowBookingWeb.Booking - сервис бронирования 
-  *   NowBookingWeb.Payment - сервис управления платежами
+  *   NowBookingWeb.ApiGateway (порт 5000) - единая точка входа
+  *   NowBookingWeb.Category (порт 5001) - сервис категорий
+  *   NowBookingWeb.Booking (порт 5002) - сервис бронирования 
+  *   NowBookingWeb.Payment (порт 5003) - сервис управления платежами
 * Angular - Client
 * Dapper
 * EF Core Migrations
 * PostgreSql
 * xUnit - Test
-* CI
+* CI pipeline
 * gRPC
-* RabbitMQ
+* RabbitMQ 
 
-## Swagger
-![image](https://github.com/user-attachments/assets/7555140a-ce5a-4d82-a8ab-b02c17b920fa)
+## Диаграмма архитектуры
+![image](https://github.com/user-attachments/assets/f0f98d39-7cb9-4f55-971e-462d49aa3a15)
+
+## Swagger API Gateway
+![image](https://github.com/user-attachments/assets/93db4fd7-8f46-4d01-a0ea-8e36c9ad202f)
 
 ## Участники
-  * BookingService - Сервис управления бронированиями, инициатор `Saga`
-  * PaymentService - Сервис управления платежами
+  * API Gateway - Точка входа
+  * CategoryService - Сервис категорий
+  * BookingService - Сервис управления `бронированиями`, инициатор `Saga`
+  * PaymentService - Сервис управления `платежами`
   * RabbitMQ - Брокер сообщений для `асинхронной` коммуникации
   * gRPC - `Синхронный` вызов между сервисами 
+
+## Диаграмма коммуникации CategoryService (`HTTP/1.1`)
+![image](https://github.com/user-attachments/assets/e4ebb220-b094-43b8-aacf-375b09951d57)
+
+## Диаграмма коммуникации BookingService (`HTTP/2`)
+![image](https://github.com/user-attachments/assets/82583cd9-cbab-490a-a0e3-62342cabd853)
 
 ## Типы коммуникаций
 ### 1. Синхронная (gRPC)
