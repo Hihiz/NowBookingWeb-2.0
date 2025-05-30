@@ -19,7 +19,7 @@
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/98191494/447332112-f0f98d39-7cb9-4f55-971e-462d49aa3a15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250530T160636Z&X-Amz-Expires=300&X-Amz-Signature=8038c4b054f351bba5bda6ea06d0144cb8bf52f8b2b254fa8468bbe745d72c71&X-Amz-SignedHeaders=host)
 
 ## Swagger API Gateway
-![image](https://github.com/user-attachments/assets/93db4fd7-8f46-4d01-a0ea-8e36c9ad202f)
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/98191494/447329360-93db4fd7-8f46-4d01-a0ea-8e36c9ad202f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250530T160919Z&X-Amz-Expires=300&X-Amz-Signature=0f11e84b409ef893a4f78705f609db39af4b45a221d8572b116bd0076d408e9d&X-Amz-SignedHeaders=host)
 
 ## Участники
   * API Gateway - Точка входа
