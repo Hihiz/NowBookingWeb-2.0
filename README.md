@@ -19,7 +19,7 @@
 ![image](https://github.com/user-attachments/assets/f0f98d39-7cb9-4f55-971e-462d49aa3a15)
 
 ## Swagger API Gateway
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/98191494/447329360-93db4fd7-8f46-4d01-a0ea-8e36c9ad202f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250530T160919Z&X-Amz-Expires=300&X-Amz-Signature=0f11e84b409ef893a4f78705f609db39af4b45a221d8572b116bd0076d408e9d&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/93db4fd7-8f46-4d01-a0ea-8e36c9ad202f)
 
 ## Участники
   * API Gateway - Точка входа
@@ -33,7 +33,7 @@
 ![image](https://github.com/user-attachments/assets/e4ebb220-b094-43b8-aacf-375b09951d57)
 
 ## Диаграмма коммуникации BookingService (`HTTP/2`)
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/98191494/447332834-82583cd9-cbab-490a-a0e3-62342cabd853.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250530T160744Z&X-Amz-Expires=300&X-Amz-Signature=7188516869362323a83c20e99ca9b546d041d2a8d5c07fc8cae3eb9e320d229a&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/82583cd9-cbab-490a-a0e3-62342cabd853)
 
 ## Типы коммуникаций
 ### 1. Синхронная (gRPC)
@@ -76,4 +76,4 @@
    
 * Диаграмма `с компенсациями` (восстановление платежа при `ошибках бронирования`)
   
-![image](https://github-production-user-asset-6210df.s3.amazonaws.com/98191494/445244808-556656ca-4b1b-4841-89cf-a94013cccd81.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250530T160834Z&X-Amz-Expires=300&X-Amz-Signature=47d754235c0579d031ca827e776df7e142b5e906019e83f14763df2b3cea2f35&X-Amz-SignedHeaders=host)
+![image](https://github.com/user-attachments/assets/556656ca-4b1b-4841-89cf-a94013cccd81)
