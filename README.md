@@ -16,11 +16,10 @@
 * RabbitMQ 
 
 ## Диаграмма архитектуры
-<img width="1027" height="251" alt="image" src="https://github.com/user-attachments/assets/cd5b95e2-00c6-4d0b-9b20-439c71e5bcbd" />
-
+<img width="893" height="233" alt="image" src="https://github.com/user-attachments/assets/d15e8e95-8704-4cd5-a495-9e11a5b3a047" />
 
 ## Swagger API Gateway
-![image](https://github.com/user-attachments/assets/93db4fd7-8f46-4d01-a0ea-8e36c9ad202f)
+<img width="798" height="549" alt="image" src="https://github.com/user-attachments/assets/1f3b0f44-13dc-47d6-ab83-f4acac83d868" />
 
 ## Участники
   * API Gateway - Точка входа
@@ -31,10 +30,10 @@
   * gRPC - `Синхронный` вызов между сервисами 
 
 ## Диаграмма коммуникации CategoryService (`HTTP/1.1`)
-<img width="1104" height="573" alt="image" src="https://github.com/user-attachments/assets/59e8db61-8033-4aeb-a301-986f52f22846" />
+<img width="893" height="481" alt="image" src="https://github.com/user-attachments/assets/c139e0be-e3d9-433e-a195-d509ad93b08e" />
 
 ## Диаграмма коммуникации BookingService (`HTTP/2`)
-![image](https://github.com/user-attachments/assets/82583cd9-cbab-490a-a0e3-62342cabd853)
+<img width="893" height="481" alt="image" src="https://github.com/user-attachments/assets/2c2b7852-59c7-4723-ae24-2a67247087e3" />
 
 ## Типы коммуникаций
 ### 1. Синхронная (gRPC)
