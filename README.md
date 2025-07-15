@@ -16,7 +16,8 @@
 * RabbitMQ 
 
 ## Диаграмма архитектуры
-![image](https://github.com/user-attachments/assets/f0f98d39-7cb9-4f55-971e-462d49aa3a15)
+<img width="1027" height="251" alt="image" src="https://github.com/user-attachments/assets/cd5b95e2-00c6-4d0b-9b20-439c71e5bcbd" />
+
 
 ## Swagger API Gateway
 ![image](https://github.com/user-attachments/assets/93db4fd7-8f46-4d01-a0ea-8e36c9ad202f)
