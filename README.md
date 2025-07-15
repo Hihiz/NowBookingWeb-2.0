@@ -30,7 +30,7 @@
   * gRPC - `Синхронный` вызов между сервисами 
 
 ## Диаграмма коммуникации CategoryService (`HTTP/1.1`)
-![image](https://github.com/user-attachments/assets/e4ebb220-b094-43b8-aacf-375b09951d57)
+<img width="1104" height="573" alt="image" src="https://github.com/user-attachments/assets/59e8db61-8033-4aeb-a301-986f52f22846" />
 
 ## Диаграмма коммуникации BookingService (`HTTP/2`)
 ![image](https://github.com/user-attachments/assets/82583cd9-cbab-490a-a0e3-62342cabd853)
