@@ -48,7 +48,7 @@
 3. Изменяет статус бронированию
  
 - На диаграмме описаны три кейса с компенсациями: `успешное создание`, `при обработке платежа упала ошибка`, `при обновлении статуса упала ошибка`  
-![image](https://github.com/user-attachments/assets/b94ed4c1-7dc7-4552-9fcd-2c215529de83)
+<img width="595" height="806" alt="image" src="https://github.com/user-attachments/assets/971dfb05-3704-4024-9e9a-cfd9d88160a4" />
 
 ### 2. Асинхронная (RabbitMQ)
 **Saga Choreography**
@@ -57,18 +57,17 @@
 - Сервисы коммуницируют через `события` используя очередь (брокер RabbitMQ)
 
 - **Пример работы**
-- 
-  Возврат платежа
+  
+Возврат платежа
 1. `BookingService` - публикует событие `BookingRefundRequested` в очередь `Booking_Refund_Payment_Request`
 2. `PaymentService` - обрабатывает события из очереди, отменяет платеж и публикует результат обработки в очередь `Booking_Refund_Payment_Response`
 3. `BookingService` - обрабатывает событие и `обновляет статус бронированию`
 
 - На диаграммах описаны шаги выполнения `возврата платежа`
 * Диаграмма `без компенсаций`
-  
-![image](https://github.com/user-attachments/assets/92de311b-7c78-41ce-9bea-2f57530cf9d7)
+<img width="654" height="785" alt="image" src="https://github.com/user-attachments/assets/c42a2936-dc0a-47d1-b80f-47924eb53374" />
 
- Возврат платежа с компенсацией
+Возврат платежа с компенсацией
 1. `BookingService` - публикует событие `BookingRefundRequested` в очередь `Booking_Refund_Payment_Request`
 2. `PaymentService` - обрабатывает события из очереди, отменяет платеж и публикует результат обработки в очередь `Booking_Refund_Payment_Response`
 3. `BookingService` - обрабатывает событие, при обновлении бронирования `падает ошибка`, событие `BookingPaymentRefundResult` публикуется в очередь `Booking_Restore_Payment_Request`
