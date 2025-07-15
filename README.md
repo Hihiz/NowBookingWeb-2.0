@@ -75,4 +75,4 @@
    
 * Диаграмма `с компенсациями` (восстановление платежа при `ошибках бронирования`)
   
-![image](https://github.com/user-attachments/assets/556656ca-4b1b-4841-89cf-a94013cccd81)
+<img width="513" height="792" alt="image" src="https://github.com/user-attachments/assets/77155128-be4b-4553-bdae-ac61f3f4e318" />
